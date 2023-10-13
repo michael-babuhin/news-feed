@@ -15,3 +15,5 @@ The design for this project is created using Figma. You can view the design by c
 ```bash
 git clone https://github.com/michael-babuhin/news-feed.git
 ```
+## License
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
