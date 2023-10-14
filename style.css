@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap');
 :root {
     --color-primary: #262A2F;
-    --color-acent: #FF5533;
-    --color-grey: #868686;;
-    --color-white: #FFFF;
+    --color-accent: #FF5533;
+    --color-grey: #868686;
+    --color-white: #FFFFFF;
 
     --grid-column-width: 101px;
     --grid-gap: 20px;
@@ -14,25 +14,31 @@
 }
 body {
     font-family: 'Rubik', sans-serif;
-    background-color: #fff;
+    background-color: #EBEBEB;
     font-size: 22px;
     font-weight: 400;
 }
-header {
-    padding-top: 38px;
-    padding-bottom: 150px;
-}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(12, var(--grid-column-width));
     gap: var(--grid-gap);
 }
 .container {
-    max-width: 1450px;
+    max-width: 1435px;
     margin: 0 auto;
+}
+
+.header {
+    padding-top: 38px;
+    padding-bottom: 150px;
 }
 .navigation__image {
     width: 100%;
+}
+.navigation__list {
+    list-style: none;
+    display: flex;
 }
 .navigation__item {
     margin-right: 60px;
@@ -40,54 +46,28 @@ header {
 .navigation__item:last-child {
     margin-right: 0;
 }
-.navigation__list {
-    display: flex;
-    list-style: none;
-}
 .navigation__link {
     font-size: 24px;
-    color: var(--color-primary);
     font-weight: 900;
     text-transform: uppercase;
     cursor: pointer;
-
 }
+.header__navigation .navigation__link--active,
 .header__navigation .navigation__link:hover {
-    color: var(--color-acent);
-}
-.header__navigation .navigation__link--active {
-    color: var(--color-acent);
-}
-.header__navigation .navigation__link {
-    color: var(--color-primary);
-}
-.header__navigation .navigation__list {
-    grid-column: 5/-1;
+    color: var(--color-accent);
 }
 .header__navigation .navigation__logo {
     grid-column: span 4;
     padding-right: 32px;
 }
-.article-category {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 17px;
-    color: var(--color-acent);
-    text-transform: uppercase;
+.header__navigation .navigation__list {
+    grid-column: 5/-1;
 }
-.article-date {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 24px;
-    text-transform: uppercase;
-    color: var(--color-acent);
+.header__navigation .navigation__link {
+    color: var(--color-primary);
 }
-.article-source {
-    font-size: 20px;
-    font-weight: 500;
-    line-height: 24px;
-    color: var(--color-grey);
-    text-transform: uppercase;
+.articles {
+    margin-bottom: 135px;
 }
 .articles__big-column {
     grid-column: span 9;
@@ -95,11 +75,32 @@ header {
 .articles__small-column {
     grid-column: 10/-1;
 }
+.article-category {
+    font-size: 14px;
+    line-height: 17px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.article-source {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-grey);
+    text-transform: uppercase;
+}
+.article-date {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+}
 .main-article {
+    margin-bottom: 95px;
     display: grid;
     grid-template-columns: repeat(9, var(--grid-column-width));
     gap: var(--grid-gap);
-    margin-bottom: 95px;
 }
 .main-article:last-child {
     margin-bottom: 0;
@@ -109,6 +110,8 @@ header {
     grid-column: span 3;
     min-height: 185px;
     max-height: 344px;
+    object-fit: cover;
+
 }
 .main-article__content {
     grid-column: 4/-1;
@@ -118,50 +121,45 @@ header {
     position: absolute;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url("images/image2.jpg");
 }
 .main-article__category {
     margin-bottom: 7px;
 }
 .main-article__title {
-    font-size: 42px;
-    font-weight: 700;
-    line-height: 50px;
-    color: var(--color-primary);
     margin-bottom: 34px;
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: 700;
+    color: var(--color-primary);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 .main-article__text {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 26px;
-    color: var(--color-grey);
     margin-bottom: 34px;
+    font-size: 22px;
+    line-height: 26px;
+    color: var(--color-primary);
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 .small-article {
-    border-left: 9px solid var(--color-primary);
-    padding-left: 11px;
     margin-bottom: 35px;
+    padding-left: 11px;
+    border-left: 9px solid var(--color-primary);
 }
 .small-article:last-child {
     margin-bottom: 0;
 }
 .small-article__title {
-    font-size: 20px;
+    margin-bottom: 14px;
     font-weight: 700;
+    font-size: 20px;
     line-height: 24px;
     color: var(--color-primary);
-    margin-bottom: 14px;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -169,15 +167,11 @@ header {
 }
 .article-date + .article-source::before {
     content: ' · ';
-
-}
-.articles {
-    margin-bottom: 135px;
 }
 .footer {
-    background-color: var(--color-primary);
-    padding-bottom: 56px;
     padding-top: 22px;
+    padding-bottom: 56px;
+    background-color: var(--color-primary);
 }
 .footer__column {
     display: flex;
@@ -186,29 +180,27 @@ header {
 }
 .footer__text {
     font-size: 24px;
-    font-weight: 400;
     line-height: 28px;
     color: var(--color-white);
 }
-.footer__copyright {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 28px;
-    color: var(--color-grey);
-}
 .footer__link {
-    font-weight: 800;
-    color: var(--color-acent);
+    color: var(--color-accent);
+    font-weight: 700;
     cursor: pointer;
 }
 .footer__link:hover {
     opacity: 0.8;
 }
+.footer__copyright {
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--color-grey);
+}
 .footer__navigation {
     margin-bottom: 47px;
     align-items: center;
 }
-.footer__navigation .navigation__logo{
+.footer__navigation .navigation__logo {
     grid-column: span 2;
     padding-right: 56px;
 }
@@ -218,9 +210,7 @@ header {
 .footer__navigation .navigation__link {
     color: var(--color-white);
 }
+.footer__navigation .navigation__link--active,
 .footer__navigation .navigation__link:hover {
-    color: var(--color-acent);
-}
-.footer__navigation .navigation__link--active {
-    color: var(--color-acent);
+    color: var(--color-accent);
 }
