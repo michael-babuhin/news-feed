@@ -1,7 +1,7 @@
 # News Feed
 
 This is a static website project called "Babuhin News Feed" which serves as an educational project to learn the basics of HTML and CSS. The primary aim of this project is to create a news feed where users can view and read various news articles.
-
+Check site here : https://michael-babuhin.github.io/news-feed/
 ## Technologies Used
 
 - HTML
